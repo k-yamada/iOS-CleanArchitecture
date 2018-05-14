@@ -29,12 +29,12 @@ struct LoginAccountDataStoreImpl: LoginAccountDataStore {
     func updateSelectedTwitterAccountId(_ account: ACAccount) -> Observable<Void> {
         UserDefaults.standard.set(account.identifier, forKey: _LOGIN_USER_ID)
         UserDefaults.standard.synchronize()
-        return Observable.just()
+        return Observable.just(())
     }
     
     func deleteSelectedTwitterAccountId() -> Observable<Void> {
         UserDefaults.standard.removeObject(forKey: _LOGIN_USER_ID)
         UserDefaults.standard.synchronize()
-        return Observable.just()
+        return Observable.just(())
     }
 }

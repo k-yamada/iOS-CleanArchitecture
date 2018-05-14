@@ -56,11 +56,7 @@ struct RestSLRequest {
                 
                 let context = Context()
                 let mapper = Mapper<TimelineEntity>(context: context)
-                guard let rowTimelines = mapper.mapArray(JSONArray: jsonResponse) else {
-                    observer.onError(AppError.generic)
-                    return
-                }
-                
+                let rowTimelines = mapper.mapArray(JSONArray: jsonResponse)
                 observer.onNext(rowTimelines)
                 observer.onCompleted()
             })

@@ -95,7 +95,7 @@ extension LoginAccountPresenterImpl {
             self?.wireframe?.closeView()
         }
         
-        observer.selectPersonObserver.onNext()
+        observer.selectPersonObserver.onNext(())
     }
     
     fileprivate func errorHandling(error: Error) {
